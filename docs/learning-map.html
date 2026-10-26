@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Follow a picture through Scatter</title>
+		<style>
+			:root {
+				color-scheme: light dark;
+				font-family: var(--font-sans, Arial, sans-serif);
+				color: var(--foreground, #252a24);
+			}
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				margin: 0;
+				background: transparent;
+				line-height: 1.55;
+				font-size: 15px;
+			}
+			p {
+				margin: 0 0 16px;
+			}
+			button {
+				font: inherit;
+				cursor: pointer;
+				color: inherit;
+			}
+			button:focus-visible {
+				outline: 2px solid var(--ring, #547125);
+				outline-offset: 3px;
+			}
+			.flow {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 10px;
+				list-style: none;
+				margin: 0 0 20px;
+				padding: 0;
+			}
+			.flow button {
+				width: 100%;
+				height: 100%;
+				min-height: 82px;
+				background: var(--secondary, #eef0e9);
+				border: 1px solid var(--border, #cbd0c3);
+				border-radius: var(--radius, 8px);
+				padding: 12px;
+				text-align: left;
+				display: flex;
+				flex-direction: column;
+				gap: 3px;
+			}
+			.flow button[aria-pressed="true"] {
+				border-color: var(--foreground, #252a24);
+				background: var(--accent-surface, #e5edcc);
+			}
+			.flow span {
+				font-size: 12px;
+				color: var(--muted-foreground, #62685d);
+			}
+			.flow strong {
+				font-weight: 600;
+				font-size: 15px;
+			}
+			.detail {
+				background: var(--card, #f0f1eb);
+				border-radius: var(--radius, 8px);
+				padding: 20px;
+			}
+			.detail h2 {
+				font-size: 20px;
+				line-height: 1.3;
+				margin: 0 0 10px;
+				font-weight: 600;
+			}
+			.detail p {
+				margin-bottom: 12px;
+			}
+			.detail p:last-child {
+				margin-bottom: 0;
+			}
+			code,
+			pre {
+				font-family: var(--font-mono, monospace);
+				font-size: 12px;
+			}
+			pre {
+				background: var(--code-background, #e1e6d7);
+				color: var(--code-foreground, #252a24);
+				border-radius: 6px;
+				padding: 14px;
+				white-space: pre-wrap;
+				overflow-wrap: anywhere;
+				line-height: 1.6;
+				margin: 14px 0;
+			}
+			.note {
+				font-size: 13px;
+				color: var(--muted-foreground, #62685d);
+				margin-top: 16px;
+			}
+			.footer {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 10px;
+				margin-top: 16px;
+			}
+			.footer button {
+				border: 1px solid var(--border, #cbd0c3);
+				padding: 7px 12px;
+				border-radius: var(--radius, 6px);
+				background: transparent;
+			}
+			.footer button:disabled {
+				opacity: 0.4;
+				cursor: default;
+			}
+			a {
+				color: inherit;
+				text-underline-offset: 3px;
+			}
+			@media (max-width: 470px) {
+				.flow {
+					grid-template-columns: repeat(2, minmax(0, 1fr));
+				}
+				.detail {
+					padding: 16px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			Choose a stage to trace what happens to a picture. The same rendering
+			player powers the editor and the website exports.
+		</p>
+		<ol class="flow" aria-label="Picture processing stages">
+			<li>
+				<button aria-pressed="true" data-step="0">
+					<span>1 · Read</span><strong>Picture → pixels</strong
+					><span>images.ts</span>
+				</button>
+			</li>
+			<li>
+				<button aria-pressed="false" data-step="1">
+					<span>2 · Sample</span><strong>Pixels → points</strong
+					><span>images.ts · model.ts</span>
+				</button>
+			</li>
+			<li>
+				<button aria-pressed="false" data-step="2">
+					<span>3 · Control</span><strong>Actions → settings</strong
+					><span>main.ts · types.ts</span>
+				</button>
+			</li>
+			<li>
+				<button aria-pressed="false" data-step="3">
+					<span>4 · Draw</span><strong>Points → moving field</strong
+					><span>engine.ts</span>
+				</button>
+			</li>
+			<li>
+				<button aria-pressed="false" data-step="4">
+					<span>5 · Capture</span><strong>Field → SVG or PNG</strong
+					><span>engine.ts · exports.ts</span>
+				</button>
+			</li>
+			<li>
+				<button aria-pressed="false" data-step="5">
+					<span>6 · Reuse</span><strong>Player → your website</strong
+					><span>exports.ts · embed.ts</span>
+				</button>
+			</li>
+		</ol>
+		<section class="detail" aria-live="polite" aria-atomic="true">
+			<h2 id="heading"></h2>
+			<p id="explanation"></p>
+			<pre id="example"></pre>
+			<p id="decision"></p>
+		</section>
+		<div class="footer">
+			<button id="previous" disabled>Previous</button
+			><span id="position">1 of 6</span><button id="next">Next</button>
+		</div>
+		<p class="note">
+			Optional depth branch: a local worker runs a downloaded model, returns a
+			depth map, and the picture is sampled again. The app has no application
+			backend or database. This walkthrough records the build, not completed
+			learner practice.
+		</p>
+		<script>
+			const stages = [
+				{
+					title: "The browser reads your file",
+					explanation:
+						"An uploaded JPEG or PNG first becomes pixels. readImage() checks the file, decodes it, resizes its longest edge to at most 768 pixels, and creates a preview.",
+					example:
+						"const image = await readImage(file);\n// image.width, image.height, image.pixels",
+					decision:
+						"Why separate this? Image decoding can fail. It needs its own checks before the renderer receives any point data.",
+				},
+				{
+					title: "Sampling turns pixels into a point cloud",
+					explanation:
+						"sampleImage() chooses 65,536 homes, with extra weight for brightness and edges. Each home stores seven values. Larger rendering counts reuse these homes with varied motion and jitter.",
+					example:
+						"[x, y, z, red, green, blue, opacity]\n\nconst cloud = sampleImage(image, name);",
+					decision:
+						"Why numbers? A graphics processor can draw large arrays of positions and colours. Initial z comes from brightness relief; an optional depth map can replace it.",
+				},
+				{
+					title: "A control changes a setting",
+					explanation:
+						"main.ts connects the interface to the player. types.ts describes the settings. The Drift slider changes settings.drift; it does not draw the particles itself.",
+					example:
+						"// Starting value in model.ts\ndrift: 36\n\n// engine.ts passes the current value to the shader\nuDrift: settings.drift / 100",
+					decision:
+						"Why native controls? This single editor can use direct browser events. React, an account system and a database would add work without helping the requested local workflow.",
+				},
+				{
+					title: "The GPU calculates the moving field",
+					explanation:
+						"engine.ts sends point data and settings to WebGL 2. A vertex shader calculates motion, release, camera position and colour. A fragment shader gives the points soft edges.",
+					example:
+						"source homes + target homes\n        + settings + time\n                  ↓\n        positions on the screen",
+					decision:
+						"Why share the engine? The editor and exported players use createScatterPlayer(). Fixes to camera controls and paused selection reach both.",
+				},
+				{
+					title: "Export captures the renderer’s result",
+					explanation:
+						"snapshot() reads calculated positions back from the GPU using transform feedback. frameSvg() turns those results into editable circles and paths. PNG export rasterizes the SVG at twice the stage dimensions.",
+					example:
+						"const frame = player.snapshot(limit);\nconst svg = frameSvg(frame, settings);\n\n// Captured point layout has eight values:\n[screenX, screenY, radius, depth, r, g, b, opacity]",
+					decision:
+						"Why capture instead of recalculate? A second movement algorithm could drift from the preview. Geometry comes from the renderer; SVG circles still approximate its soft raster edges.",
+				},
+				{
+					title: "The website receives a player or a snapshot",
+					explanation:
+						"SVG is a frozen set of shapes. Standalone HTML contains point data and the self-contained player. The JavaScript option loads scatter.js plus a project JSON file into a container on your page.",
+					example:
+						'const field = Scatter.mount("#point-field", {\n  project: "./scatter-project.json"\n});\n\n// When the page removes it:\nfield.destroy();',
+					decision:
+						"Why cleanup? Removing a DOM element alone can leave animation, event listeners and GPU resources running. destroy() releases those resources.",
+				},
+			];
+			let selected = 0;
+			function show(index) {
+				selected = index;
+				const s = stages[index];
+				document.getElementById("heading").textContent = s.title;
+				document.getElementById("explanation").textContent = s.explanation;
+				document.getElementById("example").textContent = s.example;
+				document.getElementById("decision").textContent = s.decision;
+				document.getElementById("position").textContent =
+					`${index + 1} of ${stages.length}`;
+				document
+					.querySelectorAll("[data-step]")
+					.forEach((b, i) =>
+						b.setAttribute("aria-pressed", String(i === index)),
+					);
+				document.getElementById("previous").disabled = index === 0;
+				document.getElementById("next").disabled = index === stages.length - 1;
+			}
+			document
+				.querySelectorAll("[data-step]")
+				.forEach((b) =>
+					b.addEventListener("click", () => show(Number(b.dataset.step))),
+				);
+			document.getElementById("previous").onclick = () =>
+				show(Math.max(0, selected - 1));
+			document.getElementById("next").onclick = () =>
+				show(Math.min(stages.length - 1, selected + 1));
+			show(0);
+			console.assert(
+				document.querySelectorAll("[data-step]").length === 6,
+				"Six pipeline stages",
+			);
+			for (let i = 0; i < stages.length; i++) {
+				show(i);
+				console.assert(
+					document.getElementById("heading").textContent === stages[i].title,
+					"Stage content",
+				);
+			}
+			show(0);
+			console.assert(
+				document.getElementById("previous").disabled,
+				"First stage previous control",
+			);
+			console.log("Learning map: six stages and navigation checks pass.");
+		</script>
+	</body>
+</html>

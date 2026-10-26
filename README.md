@@ -13,6 +13,10 @@ npm run dev
 
 Open `http://localhost:5173`. The editor starts with four procedural studies. Add a picture to replace the studies, or double-click a picture slot to replace that slot.
 
+## Understand the build
+
+Read [How Scatter is built](docs/LEARNING.md) for the architecture, every important file and the decisions behind the renderer and exports. Explore the [interactive build map](docs/learning-map.html), then use [Make three visible changes](docs/PRACTICE.md) to apply it in the actual project.
+
 ## Make a field
 
 - Load up to four JPEG, PNG, WebP, AVIF, BMP, or GIF files. Each file can be up to 30 MB and 64 megapixels. Animated images use a single frame.

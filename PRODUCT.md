@@ -15,7 +15,7 @@ Corey making experimental image-led graphics and interactive website elements.
 Turn up to four pictures into an art-directable moving point field. Match the working tools observed on Gather Lite, then add SVG export and a reusable interactive website embed.
 
 ## Operating Context
-Local browser editor. Artwork exports must be usable independently of the editor. Publication and deployment are outside this request.
+Local browser editor. Artwork exports must be usable independently of the editor. Corey authorised public GitHub code hosting on 26 October 2026. Website deployment remains outside this request.
 
 ## Capabilities and Constraints
 Picture upload and switching, swarm/melt transitions, drift/splash/gather/depth, line position/angle/side, orbit/zoom/pointer interaction, tracking/links/scan/trails/marks, tracker density, paper and negative/true appearance, coloured light impulses, fullscreen and keyboard shortcuts. SVG, PNG, project save/load, interactive HTML and JavaScript embed are requested implementation scope. Match capabilities, not the reference's code or identity. Semantic depth requires an explicitly labelled model download; processing stays local. Brightness relief remains available when inference fails.
