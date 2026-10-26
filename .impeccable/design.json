@@ -1,0 +1,352 @@
+{
+	"schemaVersion": 2,
+	"generatedAt": "2026-10-26T05:57:12.302477+00:00",
+	"title": "Design System: Scatter",
+	"extensions": {
+		"colorMeta": {
+			"accent": {
+				"role": "primary",
+				"displayName": "Accent",
+				"tonalRamp": [
+					"oklch(15.0% 0.0699 116.7)",
+					"oklch(27.0% 0.1155 116.7)",
+					"oklch(38.0% 0.1432 116.7)",
+					"oklch(49.0% 0.1539 116.7)",
+					"oklch(61.0% 0.1449 116.7)",
+					"oklch(72.0% 0.1187 116.7)",
+					"oklch(84.0% 0.0742 116.7)",
+					"oklch(95.0% 0.0241 116.7)"
+				]
+			},
+			"shell": {
+				"role": "neutral",
+				"displayName": "Shell",
+				"tonalRamp": [
+					"oklch(15.0% 0.0037 114.2)",
+					"oklch(27.0% 0.0061 114.2)",
+					"oklch(38.0% 0.0075 114.2)",
+					"oklch(49.0% 0.0081 114.2)",
+					"oklch(61.0% 0.0076 114.2)",
+					"oklch(72.0% 0.0062 114.2)",
+					"oklch(84.0% 0.0039 114.2)",
+					"oklch(95.0% 0.0013 114.2)"
+				]
+			},
+			"panel": {
+				"role": "neutral",
+				"displayName": "Panel",
+				"tonalRamp": [
+					"oklch(15.0% 0.0036 114.2)",
+					"oklch(27.0% 0.0060 114.2)",
+					"oklch(38.0% 0.0075 114.2)",
+					"oklch(49.0% 0.0080 114.2)",
+					"oklch(61.0% 0.0075 114.2)",
+					"oklch(72.0% 0.0062 114.2)",
+					"oklch(84.0% 0.0039 114.2)",
+					"oklch(95.0% 0.0013 114.2)"
+				]
+			},
+			"ink": {
+				"role": "neutral",
+				"displayName": "Ink",
+				"tonalRamp": [
+					"oklch(15.0% 0.0059 140.5)",
+					"oklch(27.0% 0.0097 140.5)",
+					"oklch(38.0% 0.0121 140.5)",
+					"oklch(49.0% 0.0130 140.5)",
+					"oklch(61.0% 0.0122 140.5)",
+					"oklch(72.0% 0.0100 140.5)",
+					"oklch(84.0% 0.0062 140.5)",
+					"oklch(95.0% 0.0020 140.5)"
+				]
+			},
+			"muted": {
+				"role": "neutral",
+				"displayName": "Muted",
+				"tonalRamp": [
+					"oklch(15.0% 0.0084 130.6)",
+					"oklch(27.0% 0.0139 130.6)",
+					"oklch(38.0% 0.0172 130.6)",
+					"oklch(49.0% 0.0185 130.6)",
+					"oklch(61.0% 0.0175 130.6)",
+					"oklch(72.0% 0.0143 130.6)",
+					"oklch(84.0% 0.0089 130.6)",
+					"oklch(95.0% 0.0029 130.6)"
+				]
+			},
+			"line": {
+				"role": "neutral",
+				"displayName": "Line",
+				"tonalRamp": [
+					"oklch(15.0% 0.0084 124.0)",
+					"oklch(27.0% 0.0139 124.0)",
+					"oklch(38.0% 0.0172 124.0)",
+					"oklch(49.0% 0.0185 124.0)",
+					"oklch(61.0% 0.0174 124.0)",
+					"oklch(72.0% 0.0143 124.0)",
+					"oklch(84.0% 0.0089 124.0)",
+					"oklch(95.0% 0.0029 124.0)"
+				]
+			},
+			"focus": {
+				"role": "primary",
+				"displayName": "Focus",
+				"tonalRamp": [
+					"oklch(15.0% 0.0493 127.7)",
+					"oklch(27.0% 0.0814 127.7)",
+					"oklch(38.0% 0.1009 127.7)",
+					"oklch(49.0% 0.1085 127.7)",
+					"oklch(61.0% 0.1021 127.7)",
+					"oklch(72.0% 0.0836 127.7)",
+					"oklch(84.0% 0.0523 127.7)",
+					"oklch(95.0% 0.0170 127.7)"
+				]
+			},
+			"stage": {
+				"role": "neutral",
+				"displayName": "Stage",
+				"tonalRamp": [
+					"oklch(15.0% 0.0017 164.6)",
+					"oklch(27.0% 0.0028 164.6)",
+					"oklch(38.0% 0.0035 164.6)",
+					"oklch(49.0% 0.0038 164.6)",
+					"oklch(61.0% 0.0035 164.6)",
+					"oklch(72.0% 0.0029 164.6)",
+					"oklch(84.0% 0.0018 164.6)",
+					"oklch(95.0% 0.0006 164.6)"
+				]
+			},
+			"stage-text": {
+				"role": "neutral",
+				"displayName": "Stage Text",
+				"tonalRamp": [
+					"oklch(15.0% 0.0082 131.9)",
+					"oklch(27.0% 0.0135 131.9)",
+					"oklch(38.0% 0.0167 131.9)",
+					"oklch(49.0% 0.0180 131.9)",
+					"oklch(61.0% 0.0169 131.9)",
+					"oklch(72.0% 0.0139 131.9)",
+					"oklch(84.0% 0.0087 131.9)",
+					"oklch(95.0% 0.0028 131.9)"
+				]
+			},
+			"paper": {
+				"role": "neutral",
+				"displayName": "Paper",
+				"tonalRamp": [
+					"oklch(15.0% 0.0042 113.2)",
+					"oklch(27.0% 0.0070 113.2)",
+					"oklch(38.0% 0.0087 113.2)",
+					"oklch(49.0% 0.0093 113.2)",
+					"oklch(61.0% 0.0088 113.2)",
+					"oklch(72.0% 0.0072 113.2)",
+					"oklch(84.0% 0.0045 113.2)",
+					"oklch(95.0% 0.0015 113.2)"
+				]
+			},
+			"segment-bed": {
+				"role": "neutral",
+				"displayName": "Segment Bed",
+				"tonalRamp": [
+					"oklch(15.0% 0.0081 120.7)",
+					"oklch(27.0% 0.0134 120.7)",
+					"oklch(38.0% 0.0167 120.7)",
+					"oklch(49.0% 0.0179 120.7)",
+					"oklch(61.0% 0.0169 120.7)",
+					"oklch(72.0% 0.0138 120.7)",
+					"oklch(84.0% 0.0086 120.7)",
+					"oklch(95.0% 0.0028 120.7)"
+				]
+			},
+			"segment-selected": {
+				"role": "neutral",
+				"displayName": "Segment Selected",
+				"tonalRamp": [
+					"oklch(15.0% 0.0055 116.8)",
+					"oklch(27.0% 0.0090 116.8)",
+					"oklch(38.0% 0.0112 116.8)",
+					"oklch(49.0% 0.0120 116.8)",
+					"oklch(61.0% 0.0113 116.8)",
+					"oklch(72.0% 0.0093 116.8)",
+					"oklch(84.0% 0.0058 116.8)",
+					"oklch(95.0% 0.0019 116.8)"
+				]
+			}
+		},
+		"typographyMeta": {
+			"brand": {
+				"displayName": "Wordmark",
+				"purpose": "Compact Archivo brand lettering."
+			},
+			"headline": {
+				"displayName": "Dialog heading",
+				"purpose": "Focused export, embed and help tasks."
+			},
+			"title": {
+				"displayName": "Inspector heading",
+				"purpose": "Top-level control grouping."
+			},
+			"label": {
+				"displayName": "Parameter label",
+				"purpose": "Dense named control groups."
+			},
+			"code": {
+				"displayName": "Embed code",
+				"purpose": "Selectable source code."
+			}
+		},
+		"shadows": [
+			{
+				"name": "selected-segment",
+				"value": "0 1px 2px #28381620",
+				"purpose": "Travel selection."
+			},
+			{
+				"name": "dialog",
+				"value": "0 20px 80px #0005",
+				"purpose": "Focused modal tasks."
+			},
+			{
+				"name": "notification",
+				"value": "0 4px 20px #18230d30",
+				"purpose": "Temporary operation feedback."
+			},
+			{
+				"name": "file-menu",
+				"value": "0 5px 15px #1c291d20",
+				"purpose": "Compact project actions."
+			}
+		],
+		"motion": [
+			{
+				"name": "control-colour",
+				"value": "background-color 0.14s ease-out, color 0.14s ease-out",
+				"purpose": "Button and input state changes; disabled by reduced motion."
+			}
+		],
+		"breakpoints": [
+			{
+				"name": "wide",
+				"value": "min-width: 1600px"
+			},
+			{
+				"name": "compact-desktop",
+				"value": "max-width: 1080px"
+			},
+			{
+				"name": "stacked",
+				"value": "max-width: 760px"
+			},
+			{
+				"name": "single-inspector",
+				"value": "max-width: 440px"
+			},
+			{
+				"name": "narrow-toolbar",
+				"value": "max-width: 360px"
+			}
+		]
+	},
+	"components": [
+		{
+			"name": "Primary button",
+			"kind": "button",
+			"refersTo": "button-primary",
+			"description": "Export SVG",
+			"html": "<button class=\"ds-button-primary\">Export SVG</button>",
+			"css": ".ds-button-primary{font:500 12px Archivo,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:background-color .14s ease-out,color .14s ease-out;background:var(--ink,#252a24);color:var(--panel,#f0f1eb);border:0;border-radius:4px;min-height:38px;padding:0 16px;}.ds-button-primary:hover{filter:brightness(.95)}.ds-button-primary:focus-visible{outline:2px solid var(--focus,#547125);outline-offset:4px}.ds-button-primary:disabled{opacity:.5;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-button-primary{transition:none}}"
+		},
+		{
+			"name": "Outline button",
+			"kind": "button",
+			"refersTo": "button-outline",
+			"description": "Embed",
+			"html": "<button class=\"ds-button-outline\">Embed</button>",
+			"css": ".ds-button-outline{font:500 12px Archivo,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:background-color .14s ease-out,color .14s ease-out;background:transparent;color:var(--ink,#252a24);border:1px solid #a9b19f;border-radius:4px;min-height:36px;padding:0 14px;}.ds-button-outline:hover{filter:brightness(.95)}.ds-button-outline:focus-visible{outline:2px solid var(--focus,#547125);outline-offset:4px}.ds-button-outline:disabled{opacity:.5;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-button-outline{transition:none}}"
+		},
+		{
+			"name": "Quiet button",
+			"kind": "button",
+			"refersTo": "button-quiet",
+			"description": "Save project",
+			"html": "<button class=\"ds-button-quiet\">Save project</button>",
+			"css": ".ds-button-quiet{font:500 12px Archivo,Arial,sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:background-color .14s ease-out,color .14s ease-out;background:transparent;color:var(--ink,#252a24);border:0;min-height:36px;padding:0 8px;}.ds-button-quiet:hover{filter:brightness(.95)}.ds-button-quiet:focus-visible{outline:2px solid var(--focus,#547125);outline-offset:4px}.ds-button-quiet:disabled{opacity:.5;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-button-quiet{transition:none}}"
+		},
+		{
+			"name": "Travel segments",
+			"kind": "custom",
+			"refersTo": "segmented",
+			"description": "Mutually exclusive Swarm and Melt modes.",
+			"html": "<div class=\"ds-segmented\" role=\"group\" aria-label=\"Travel mode\"><button aria-pressed=\"true\">Swarm</button><button aria-pressed=\"false\">Melt</button></div>",
+			"css": ".ds-segmented{display:flex;background:var(--segment-bed,#dfe3d6);border:1px solid #cad1bc;border-radius:4px;padding:3px;width:250px}.ds-segmented button{flex:1;min-height:29px;border:0;border-radius:2px;background:transparent;font:400 11px Archivo,Arial,sans-serif;color:var(--ink,#252a24);cursor:pointer}.ds-segmented button[aria-pressed=\"true\"]{background:var(--segment-selected,#f6f8ef);box-shadow:0 1px 2px #28381620;font-weight:600}.ds-segmented button:hover{filter:brightness(.95)}.ds-segmented button:focus-visible{outline:2px solid var(--focus,#547125);outline-offset:4px}"
+		},
+		{
+			"name": "Parameter range",
+			"kind": "input",
+			"description": "A labelled native slider with a separate numeric output.",
+			"html": "<label class=\"ds-range\">Drift<output>36</output><input type=\"range\" min=\"0\" max=\"100\" value=\"36\"></label>",
+			"css": ".ds-range{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px;width:250px;font:400 11px Archivo,Arial,sans-serif;color:var(--ink,#252a24)}.ds-range output{font-size:10px;color:#59674a;font-variant-numeric:tabular-nums}.ds-range input{grid-column:1/-1;appearance:none;background:transparent;cursor:pointer;height:26px;width:100%;margin:0}.ds-range input::-webkit-slider-runnable-track{height:2px;background:#bbc2b0}.ds-range input::-webkit-slider-thumb{appearance:none;height:10px;width:10px;background:#303d24;border:2px solid var(--panel,#f0f1eb);outline:1px solid #303d24;border-radius:50%;margin-top:-4px}.ds-range input::-moz-range-track{height:2px;background:#bbc2b0}.ds-range input::-moz-range-thumb{height:8px;width:8px;background:#303d24;border:2px solid var(--panel,#f0f1eb);border-radius:50%}.ds-range input:focus-visible{outline:2px solid var(--focus,#547125);outline-offset:4px}"
+		},
+		{
+			"name": "Point density select",
+			"kind": "input",
+			"description": "Native select with a thin border and compact numeral setting.",
+			"html": "<label class=\"ds-select\">Points<select><option>32,768</option><option selected>131,072</option><option>524,288</option></select></label>",
+			"css": ".ds-select{display:flex;align-items:center;justify-content:space-between;gap:12px;width:250px;font:400 11px Archivo,Arial,sans-serif;color:var(--ink,#252a24)}.ds-select select{font:inherit;background:transparent;border:1px solid var(--line,#cbd0c3);padding:6px 28px 6px 9px;color:inherit;border-radius:3px;cursor:pointer}.ds-select select:hover{filter:brightness(.95)}.ds-select select:focus-visible{outline:2px solid var(--focus,#547125);outline-offset:4px}"
+		},
+		{
+			"name": "Release line pad",
+			"kind": "custom",
+			"refersTo": "line-pad",
+			"description": "Visual excerpt of the editable line; interaction belongs to the editor, not this documentation snippet.",
+			"html": "<svg class=\"ds-line-pad\" viewBox=\"-1 -1 2 2\" role=\"img\" aria-label=\"Release line with centre and rotation handles\"><path d=\"M-1 0H1M0-1V1\" class=\"ds-pad-cross\"/><path d=\"M-.2-1H1V1H.2Z\" class=\"ds-pad-side\"/><path d=\"M-.2-.8L.2.8\" class=\"ds-pad-line\"/><circle cx=\"-.2\" cy=\"-.8\" r=\".045\" class=\"ds-pad-end\"/><circle cx=\".2\" cy=\".8\" r=\".045\" class=\"ds-pad-end\"/><circle r=\".05\" fill=\"#43562a\"/></svg>",
+			"css": ".ds-line-pad{width:100px;height:100px;background:#e0e4d8;border:1px solid #cad1bf;border-radius:3px;overflow:hidden}.ds-pad-cross{fill:none;stroke:#bdc5af;stroke-width:.015;stroke-dasharray:.06 .08}.ds-pad-side{fill:#c6d594;fill-opacity:.58}.ds-pad-line{stroke:#43562a;stroke-width:.025}.ds-pad-end{fill:#f4f6ee;stroke:#43562a;stroke-width:.022}"
+		},
+		{
+			"name": "Mobile project menu",
+			"kind": "nav",
+			"description": "Project actions remain accessible when the toolbar compacts.",
+			"html": "<details class=\"ds-menu\"><summary>Project files</summary><div><button>Open project</button><button>Save project</button></div></details>",
+			"css": ".ds-menu{position:relative;width:160px;font:400 11px Archivo,Arial,sans-serif;color:var(--ink,#252a24)}.ds-menu summary{cursor:pointer;min-height:34px;display:flex;align-items:center}.ds-menu summary:focus-visible,.ds-menu button:focus-visible{outline:2px solid var(--focus,#547125);outline-offset:4px}.ds-menu[open]>div{background:var(--panel,#f0f1eb);padding:7px;border:1px solid var(--line,#cbd0c3);border-radius:4px;box-shadow:0 5px 15px #1c291d20}.ds-menu button{display:block;width:100%;border:0;background:transparent;text-align:left;font:inherit;min-height:36px;padding:5px 10px;cursor:pointer;color:inherit}.ds-menu button:hover{background:#dce3d0}"
+		}
+	],
+	"narrative": {
+		"northStar": "Image into matter",
+		"overview": "Scatter is a working image instrument. Pale mineral controls surround a charcoal field; the picture supplies the texture, depth and motion. Archivo gives the interface a direct, compact voice. The sulphur accent identifies selection and activity without colouring the whole shell.\n\nThis records the implemented system in `src/style.css`, `src/main.ts` and `src/engine.ts`, reviewed 26 October 2026. Corey delegated the original direction. The surface contract remains in `.impeccable/surfaces/index-html.md`; it governs this editor's composition rather than every future screen. The procedural studies are original demonstrations, not user photographs.",
+		"keyCharacteristics": [
+			"Tonal groups and fine rules around an open artwork field.",
+			"Compact, labelled controls with visible values and keyboard focus.",
+			"Artwork motion driven by the rendering engine; quiet interface state changes.",
+			"The field stays visible while mobile controls scroll."
+		],
+		"rules": [
+			{
+				"name": "The Artwork Colour Rule",
+				"body": "Picture colours, single ink and light impulses belong to the artwork. Keep the surrounding controls in the mineral palette.",
+				"section": "colors"
+			},
+			{
+				"name": "The Quiet Label Rule",
+				"body": "Let weight and spacing group the controls. Labels name an action or parameter; they do not become decorative headlines.",
+				"section": "typography"
+			},
+			{
+				"name": "The Visible Result Rule",
+				"body": "A person moving a control must be able to see its effect on the field. Preserve the sticky mobile preview and its scroll offsets when changing layout.",
+				"section": "layout"
+			}
+		],
+		"dos": [
+			"Do preserve visible artwork feedback during control edits.",
+			"Do use the mineral shell and reserve picture colour for the field and its colour controls.",
+			"Do retain native input behaviour, visible focus and explicit pressed states.",
+			"Do keep upload, export and embedding discoverable at mobile sizes."
+		],
+		"donts": [
+			"Don't turn ordinary inspector sections into floating cards.",
+			"Don't substitute decorative texture for actual picture geometry.",
+			"Don't describe brightness relief, imported maps and estimated depth as the same source.",
+			"Don't inherit tiny auxiliary text as a general-purpose body scale."
+		]
+	}
+}

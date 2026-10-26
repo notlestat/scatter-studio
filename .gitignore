@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.impeccable/*
+!.impeccable/design.json
+docs/research/reference/
+docs/research/rea-evidence.json
+docs/research/*.png
+artifacts/
+*.local
+
+test-results/
+public/qa-*
