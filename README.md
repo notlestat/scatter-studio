@@ -7,11 +7,11 @@ A local image-to-particle editor. Shape pictures into moving point fields, expor
 Use Node.js 22.12 or newer.
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
-Open `http://localhost:5173`. The editor starts with four procedural studies. Add a picture to replace the studies, or double-click a picture slot to replace that slot.
+Open `http://localhost:5173`. The dev and preview servers listen on all network interfaces (`--host 0.0.0.0`), so other devices on your network can open them too. The editor starts with four procedural studies. Add a picture to replace the studies, or double-click a picture slot to replace that slot.
 
 ## Understand the build
 
@@ -64,7 +64,7 @@ npx playwright test tests/browser/studio.spec.ts tests/browser/motion.spec.ts te
 
 `npm run build` writes the editor and standalone `scatter.js` player to `dist`. Serve that folder to use the production build.
 
-Browser verification uses the installed Google Chrome executable configured in `playwright.config.ts` and a running dev server. Change `executablePath` for another operating system. The optional real-model check is `npx playwright test tests/browser/depth.spec.ts`; it downloads public model files.
+Browser verification uses the installed Google Chrome executable configured in `playwright.config.ts` and a running dev server. Change `executablePath` for another operating system. The optional real-model check is `npx playwright test tests/browser/depth.spec.ts`. It downloads public model files.
 
 For model checks against the production build, run `npm run preview -- --port 5174` after building, then use `SCATTER_URL=http://localhost:5174 npx playwright test tests/browser/depth.spec.ts`. The [verification record](docs/VERIFICATION.md) documents actual coverage and remaining limits. [DESIGN.md](DESIGN.md) records the implemented visual system.
 
